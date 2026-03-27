@@ -223,32 +223,28 @@ lightbox.addEventListener('touchend', e => {
 
 // ==========================================
 //  VISIT COUNTER – GoatCounter API
+//  Docs: goatcounter.com/help/visitor-counter
 // ==========================================
 (async function loadVisitCount() {
   const el = document.getElementById('visitCount');
   if (!el) return;
   try {
-    // GoatCounter public API: pageviews for all pages combined
-    const res = await fetch('https://beltrio.goatcounter.com/counter/TOTAL.json');
-    if (!res.ok) throw new Error('API error');
+    // GoatCounter public counter API — path must be an actual visited page path.
+    // For a single-page site, the root '/' gets all visits.
+    const path = encodeURIComponent('/');
+    const res = await fetch(`https://beltrio.goatcounter.com/counter/${path}.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    // Animate counting up
-    const target = data.count || 0;
-    animateCount(el, 0, target, 1400);
-  } catch (err) {
-    // Fallback: try to fetch the badge text
-    try {
-      const res2 = await fetch('https://beltrio.goatcounter.com/counter/TOTAL.text');
-      const text = await res2.text();
-      const num = parseInt(text.trim().replace(/,/g, ''), 10);
-      if (!isNaN(num)) {
-        animateCount(el, 0, num, 1400);
-      } else {
-        el.textContent = '–';
-      }
-    } catch {
-      el.textContent = '–';
+    // data.count is a string like "1" or "1,234"
+    const num = parseInt(String(data.count).replace(/[^0-9]/g, ''), 10);
+    if (!isNaN(num) && num > 0) {
+      animateCount(el, 0, num, 1400);
+    } else {
+      el.textContent = '0';
     }
+  } catch (err) {
+    console.warn('GoatCounter counter fetch failed:', err);
+    el.textContent = '–';
   }
 })();
 
