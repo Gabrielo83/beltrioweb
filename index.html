@@ -28,6 +28,7 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#video">Video</a></li>
         <li><a href="#fotos">Fotos</a></li>
+        <li><a href="#agenda">Agenda</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
@@ -89,27 +90,179 @@
     </div>
   </section>
 
-  <!-- ========== FOTOS ========== -->
+  <!-- ========== GALERÍA ========== -->
   <section id="fotos" class="section-mid">
     <div class="container">
       <div class="section-header">
         <span class="section-label">GALERÍA</span>
-        <h2 class="section-title">El Grupo</h2>
+        <h2 class="section-title">Momentos del grupo</h2>
         <div class="section-line"></div>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item featured">
-          <img src="images/grupo1.jpeg" alt="BELTRÍO – Foto del grupo" loading="lazy" />
-          <div class="gallery-overlay">
-            <span>BELTRÍO</span>
-          </div>
-        </div>
+
+      <!-- Album tabs -->
+      <div class="album-tabs" id="albumTabs" role="tablist">
+        <button class="album-tab active" data-album="all" role="tab" aria-selected="true" id="tab-all">Todos</button>
+        <button class="album-tab" data-album="album-shows" role="tab" aria-selected="false" id="tab-shows">Shows</button>
+        <button class="album-tab" data-album="album-Tanti-Cba" role="tab" aria-selected="false" id="tab-tanti">Tanti – Cba</button>
+        <button class="album-tab" data-album="album-paraguay" role="tab" aria-selected="false" id="tab-paraguay">Paraguay</button>
       </div>
+
+      <!-- Gallery masonry grid -->
+      <div class="gallery-masonry" id="galleryGrid">
+
+        <!-- Album: shows -->
+        <div class="gallery-item" data-album="album-shows" data-index="0" data-src="images/album-shows/img1.jpeg" tabindex="0" role="button" aria-label="Abrir foto 1 de Shows">
+          <img src="images/album-shows/img1.jpeg" alt="BELTRÍO Shows – foto 1" loading="lazy" />
+          <div class="gallery-overlay"><span>Shows</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-shows" data-index="1" data-src="images/album-shows/img2.jpeg" tabindex="0" role="button" aria-label="Abrir foto 2 de Shows">
+          <img src="images/album-shows/img2.jpeg" alt="BELTRÍO Shows – foto 2" loading="lazy" />
+          <div class="gallery-overlay"><span>Shows</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+
+        <!-- Album: Tanti-Cba -->
+        <div class="gallery-item" data-album="album-Tanti-Cba" data-index="0" data-src="images/album-Tanti-Cba/img1.jpeg" tabindex="0" role="button" aria-label="Abrir foto 1 de Tanti">
+          <img src="images/album-Tanti-Cba/img1.jpeg" alt="Tanti Córdoba – foto 1" loading="lazy" />
+          <div class="gallery-overlay"><span>Tanti – Cba</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-Tanti-Cba" data-index="1" data-src="images/album-Tanti-Cba/img2.jpeg" tabindex="0" role="button" aria-label="Abrir foto 2 de Tanti">
+          <img src="images/album-Tanti-Cba/img2.jpeg" alt="Tanti Córdoba – foto 2" loading="lazy" />
+          <div class="gallery-overlay"><span>Tanti – Cba</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-Tanti-Cba" data-index="2" data-src="images/album-Tanti-Cba/img3.jpeg" tabindex="0" role="button" aria-label="Abrir foto 3 de Tanti">
+          <img src="images/album-Tanti-Cba/img3.jpeg" alt="Tanti Córdoba – foto 3" loading="lazy" />
+          <div class="gallery-overlay"><span>Tanti – Cba</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-Tanti-Cba" data-index="3" data-src="images/album-Tanti-Cba/img4.jpeg" tabindex="0" role="button" aria-label="Abrir foto 4 de Tanti">
+          <img src="images/album-Tanti-Cba/img4.jpeg" alt="Tanti Córdoba – foto 4" loading="lazy" />
+          <div class="gallery-overlay"><span>Tanti – Cba</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+
+        <!-- Album: Paraguay -->
+        <div class="gallery-item" data-album="album-paraguay" data-index="0" data-src="images/album-paraguay/img1.jpeg" tabindex="0" role="button" aria-label="Abrir foto 1 de Paraguay">
+          <img src="images/album-paraguay/img1.jpeg" alt="Paraguay – foto 1" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="1" data-src="images/album-paraguay/img2.jpeg" tabindex="0" role="button" aria-label="Abrir foto 2 de Paraguay">
+          <img src="images/album-paraguay/img2.jpeg" alt="Paraguay – foto 2" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="2" data-src="images/album-paraguay/img3.jpeg" tabindex="0" role="button" aria-label="Abrir foto 3 de Paraguay">
+          <img src="images/album-paraguay/img3.jpeg" alt="Paraguay – foto 3" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="3" data-src="images/album-paraguay/img4.jpeg" tabindex="0" role="button" aria-label="Abrir foto 4 de Paraguay">
+          <img src="images/album-paraguay/img4.jpeg" alt="Paraguay – foto 4" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="4" data-src="images/album-paraguay/img5.jpeg" tabindex="0" role="button" aria-label="Abrir foto 5 de Paraguay">
+          <img src="images/album-paraguay/img5.jpeg" alt="Paraguay – foto 5" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="5" data-src="images/album-paraguay/img6.jpeg" tabindex="0" role="button" aria-label="Abrir foto 6 de Paraguay">
+          <img src="images/album-paraguay/img6.jpeg" alt="Paraguay – foto 6" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="6" data-src="images/album-paraguay/img7.jpeg" tabindex="0" role="button" aria-label="Abrir foto 7 de Paraguay">
+          <img src="images/album-paraguay/img7.jpeg" alt="Paraguay – foto 7" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="7" data-src="images/album-paraguay/img8.jpeg" tabindex="0" role="button" aria-label="Abrir foto 8 de Paraguay">
+          <img src="images/album-paraguay/img8.jpeg" alt="Paraguay – foto 8" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="8" data-src="images/album-paraguay/img9.jpeg" tabindex="0" role="button" aria-label="Abrir foto 9 de Paraguay">
+          <img src="images/album-paraguay/img9.jpeg" alt="Paraguay – foto 9" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="9" data-src="images/album-paraguay/img10.jpeg" tabindex="0" role="button" aria-label="Abrir foto 10 de Paraguay">
+          <img src="images/album-paraguay/img10.jpeg" alt="Paraguay – foto 10" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="10" data-src="images/album-paraguay/img11.jpeg" tabindex="0" role="button" aria-label="Abrir foto 11 de Paraguay">
+          <img src="images/album-paraguay/img11.jpeg" alt="Paraguay – foto 11" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+        <div class="gallery-item" data-album="album-paraguay" data-index="11" data-src="images/album-paraguay/img12.jpeg" tabindex="0" role="button" aria-label="Abrir foto 12 de Paraguay">
+          <img src="images/album-paraguay/img12.jpeg" alt="Paraguay – foto 12" loading="lazy" />
+          <div class="gallery-overlay"><span>Paraguay</span><i class="gallery-zoom-icon">⊕</i></div>
+        </div>
+
+      </div><!-- end gallery-masonry -->
+    </div>
+  </section>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de fotos">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+    </button>
+    <div class="lightbox-track" id="lightboxTrack">
+      <div class="lightbox-img-wrap" id="lightboxImgWrap">
+        <img id="lightboxImg" src="" alt="Foto ampliada" />
+      </div>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente foto">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+    </button>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
+    <div class="lightbox-album-name" id="lightboxAlbumName"></div>
+  </div>
+
+  <!-- ========== AGENDA ========== -->
+  <section id="agenda" class="section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">AGENDA</span>
+        <h2 class="section-title">Próximos Shows</h2>
+        <div class="section-line"></div>
+        <p class="section-desc">No te pierdas nuestras próximas presentaciones. ¡Te esperamos!</p>
+      </div>
+
+      <div class="agenda-list" id="agendaList">
+
+        <!-- Show: El Patio / Baldomero – 01 ABR 2026 -->
+        <div class="agenda-card agenda-card--flyer">
+          <div class="agenda-flyer-thumb">
+            <img src="images/img-agenda/baldomero-01-04-26.jpeg" alt="Flyer show El Patio Baldomero – BELTRÍO 1 de Abril 2026" loading="lazy" />
+            <div class="agenda-flyer-glow"></div>
+          </div>
+          <div class="agenda-date">
+            <span class="agenda-day">01</span>
+            <span class="agenda-month">ABR</span>
+            <span class="agenda-year">2026</span>
+          </div>
+          <div class="agenda-divider"></div>
+          <div class="agenda-info">
+            <h3 class="agenda-title">Música en Vivo – El Patio / Baldomero</h3>
+            <div class="agenda-meta">
+              <span class="agenda-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Costanera de Formosa
+              </span>
+              <span class="agenda-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                Reservas hasta 21:30 hs
+              </span>
+              <span class="agenda-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2z"/><path d="M12 8v4l3 3"/></svg>
+                Miércoles
+              </span>
+            </div>
+            <p class="agenda-desc">Derecho de espectáculo <strong>$7.000 por persona</strong>. Reservas al <strong>3704-216585</strong>.</p>
+          </div>
+          <div class="agenda-status agenda-status--upcoming">Próximo</div>
+        </div>
+
+      </div><!-- end agenda-list -->
     </div>
   </section>
 
   <!-- ========== ABOUT ========== -->
-  <section id="sobre" class="section-dark about-section">
+  <section id="sobre" class="section-mid about-section">
     <div class="container about-grid">
       <div class="about-text">
         <span class="section-label">QUIÉNES SOMOS</span>
@@ -127,7 +280,7 @@
   </section>
 
   <!-- ========== CONTACTO ========== -->
-  <section id="contacto" class="section-mid">
+  <section id="contacto" class="section-dark">
     <div class="container">
       <div class="section-header">
         <span class="section-label">CONTACTO</span>
@@ -174,7 +327,14 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p class="footer-logo">BELTRÍO</p>
-      <p class="footer-copy">© 2026 BELTRÍO · Folk-Rock Latino · Todos los derechos reservados</p>
+      <div class="footer-center">
+        <p class="footer-copy">© 2026 BELTRÍO · Folk-Rock Latino · Todos los derechos reservados</p>
+        <div class="visit-counter">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span id="visitCount">...</span>
+          <span class="visit-label">visitas</span>
+        </div>
+      </div>
       <div class="footer-links">
         <a href="mailto:beltriofsa.tatu116@gmail.com">Email</a>
         <a href="https://wa.me/5493704208443" target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -184,6 +344,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- GoatCounter tracking -->
+  <script data-goatcounter="https://beltrio.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 
   <script src="script.js"></script>
 </body>
