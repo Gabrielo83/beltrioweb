@@ -145,6 +145,15 @@ function openLightbox(clickedItem) {
   lightboxClose.focus();
 }
 
+function openSingleImage(src, title) {
+  lightboxImages = [{ src: src, album: title }];
+  lightboxIndex = 0;
+  setLightboxImage(0, false);
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  lightboxClose.focus();
+}
+
 function closeLightbox() {
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
@@ -185,6 +194,13 @@ function nextImage() {
 galleryItems.forEach(item => {
   item.addEventListener('click',   () => openLightbox(item));
   item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(item); });
+});
+
+// Open lightbox on single standalone image click / enter (like Agenda flyer)
+const singleLightboxTriggers = document.querySelectorAll('.open-lightbox');
+singleLightboxTriggers.forEach(item => {
+  item.addEventListener('click',   () => openSingleImage(item.dataset.src, 'Publicidad'));
+  item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openSingleImage(item.dataset.src, 'Publicidad'); });
 });
 
 lightboxClose.addEventListener('click', closeLightbox);
