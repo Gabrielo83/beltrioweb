@@ -583,6 +583,131 @@ section { padding: 6rem 1.5rem; }
 }
 
 /* ==========================================
+   TRAYECTORIA (TIMELINE)
+========================================= */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 100%;
+  background: linear-gradient(180deg, transparent, var(--accent), var(--accent-2), transparent);
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1.5rem 3rem;
+  opacity: 0.85;
+  transition: all var(--transition);
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+.timeline-marker {
+  position: absolute;
+  top: 2rem;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--bg-card); /* was mid */
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 15px rgba(200,151,43,0.5);
+  transition: all var(--transition);
+  z-index: 2;
+}
+.timeline-item:nth-child(odd) .timeline-marker {
+  right: -10px;
+}
+.timeline-item:nth-child(even) .timeline-marker {
+  left: -10px;
+}
+.timeline-content {
+  background: var(--bg-card);
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  width: 0; height: 0;
+  border-style: solid;
+}
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: -14px;
+  border-width: 10px 0 10px 14px;
+  border-color: transparent transparent transparent var(--bg-card);
+}
+.timeline-item:nth-child(even) .timeline-content::before {
+  left: -14px;
+  border-width: 10px 14px 10px 0;
+  border-color: transparent var(--bg-card) transparent transparent;
+}
+.timeline-item:hover {
+  opacity: 1;
+}
+.timeline-item:hover .timeline-marker {
+  background: var(--accent);
+  transform: scale(1.3);
+  box-shadow: 0 0 25px rgba(200,151,43,0.8);
+}
+.timeline-item:hover .timeline-content {
+  transform: translateY(-5px);
+  border-color: rgba(200,151,43,0.3);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding: 1.5rem 0 1.5rem 3.5rem;
+    text-align: left !important;
+    left: 0 !important;
+  }
+  .timeline-marker {
+    left: 10px !important;
+    right: auto !important;
+  }
+  .timeline-item:nth-child(odd) .timeline-content::before,
+  .timeline-item:nth-child(even) .timeline-content::before {
+    left: -14px;
+    right: auto;
+    border-width: 10px 14px 10px 0;
+    border-color: transparent var(--bg-card) transparent transparent;
+  }
+}
+
+/* ==========================================
    AGENDA
 ========================================== */
 .agenda-list {
