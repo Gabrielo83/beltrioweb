@@ -89,8 +89,13 @@ function filterGallery(album) {
     const inAlbum = album === 'all' || item.dataset.album === album;
     if (inAlbum) {
       item.classList.remove('hidden');
+      // Animacion de entrada al mostrar
+      item.style.animation = 'none';
+      item.offsetHeight; // reflow
+      item.style.animation = 'galleryFadeIn 0.38s ease both';
     } else {
       item.classList.add('hidden');
+      item.style.animation = '';
     }
   });
 }
@@ -276,3 +281,49 @@ function animateCount(el, from, to, duration) {
   }
   requestAnimationFrame(step);
 }
+
+// ==========================================
+//  BACK TO TOP
+// ==========================================
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 300);
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ==========================================
+//  AGENDA – Deteccion automatica de shows pasados
+// ==========================================
+(function markPastShows() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  document.querySelectorAll('.agenda-card[data-date]').forEach(card => {
+    const [y, m, d] = card.dataset.date.split('-').map(Number);
+    const showDate = new Date(y, m - 1, d);
+
+    if (showDate < today) {
+      // Marcar como pasado si no lo esta ya
+      card.classList.add('agenda-card--past');
+      const badge = card.querySelector('.agenda-status');
+      if (badge) {
+        badge.classList.remove('agenda-status--upcoming');
+        badge.classList.add('agenda-status--past');
+        badge.textContent = 'Pasado';
+      }
+    } else {
+      // Asegurarse que los proximos tengan el badge correcto
+      card.classList.remove('agenda-card--past');
+      const badge = card.querySelector('.agenda-status');
+      if (badge) {
+        badge.classList.remove('agenda-status--past');
+        badge.classList.add('agenda-status--upcoming');
+        badge.textContent = 'Pr\u00f3ximo';
+      }
+    }
+  });
+})();
