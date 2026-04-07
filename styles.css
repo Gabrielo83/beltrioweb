@@ -675,6 +675,19 @@ section { padding: 6rem 1.5rem; }
   border-color: rgba(200,151,43,0.3);
   box-shadow: 0 12px 40px rgba(0,0,0,0.5);
 }
+.timeline-year {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(200,151,43,0.1);
+  border: 1px solid rgba(200,151,43,0.3);
+  border-radius: 50px;
+  padding: 0.2rem 0.8rem;
+  margin-bottom: 0.65rem;
+}
 .timeline-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.25rem;
@@ -687,6 +700,22 @@ section { padding: 6rem 1.5rem; }
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+.timeline-photo {
+  margin-top: 1.2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(200,151,43,0.25);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+}
+.timeline-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.timeline-item:hover .timeline-photo img {
+  transform: scale(1.04);
 }
 
 @media (max-width: 768px) {
