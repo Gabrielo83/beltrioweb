@@ -131,7 +131,7 @@ a { text-decoration: none; color: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background: url('images/grupo1.jpeg') center/cover no-repeat;
+  background: url('images/optimized/content/grupo1.webp') center/cover no-repeat;
   opacity: 0.12;
   filter: saturate(0.3);
   transform: scale(1.04);

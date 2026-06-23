@@ -1,0 +1,716 @@
+{
+  "gallery": [
+    {
+      "original": "images/album-shows/IMG-20220531-WA0093.jpg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-shows/IMG-20220531-WA0093.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 31676
+      },
+      "full": {
+        "path": "images/optimized/full/album-shows/IMG-20220531-WA0093.webp",
+        "width": 1280,
+        "height": 1280,
+        "bytes": 171040
+      }
+    },
+    {
+      "original": "images/album-shows/IMG-20220923-WA0025.jpg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-shows/IMG-20220923-WA0025.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 34342
+      },
+      "full": {
+        "path": "images/optimized/full/album-shows/IMG-20220923-WA0025.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 200148
+      }
+    },
+    {
+      "original": "images/album-shows/IMG-20220925-WA0011.jpg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-shows/IMG-20220925-WA0011.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 13802
+      },
+      "full": {
+        "path": "images/optimized/full/album-shows/IMG-20220925-WA0011.webp",
+        "width": 1280,
+        "height": 958,
+        "bytes": 54082
+      }
+    },
+    {
+      "original": "images/album-shows/IMG-20220925-WA0015.jpg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-shows/IMG-20220925-WA0015.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 35738
+      },
+      "full": {
+        "path": "images/optimized/full/album-shows/IMG-20220925-WA0015.webp",
+        "width": 1600,
+        "height": 1280,
+        "bytes": 211570
+      }
+    },
+    {
+      "original": "images/album-shows/IMG-20220925-WA0016.jpg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-shows/IMG-20220925-WA0016.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 24750
+      },
+      "full": {
+        "path": "images/optimized/full/album-shows/IMG-20220925-WA0016.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 128608
+      }
+    },
+    {
+      "original": "images/album-shows/img1.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-shows/img1.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 31064
+      },
+      "full": {
+        "path": "images/optimized/full/album-shows/img1.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 158216
+      }
+    },
+    {
+      "original": "images/album-shows/img2.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-shows/img2.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 31844
+      },
+      "full": {
+        "path": "images/optimized/full/album-shows/img2.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 157644
+      }
+    },
+    {
+      "original": "images/album-Tanti-Cba/img1.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-Tanti-Cba/img1.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 51492
+      },
+      "full": {
+        "path": "images/optimized/full/album-Tanti-Cba/img1.webp",
+        "width": 1280,
+        "height": 576,
+        "bytes": 192082
+      }
+    },
+    {
+      "original": "images/album-Tanti-Cba/img2.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-Tanti-Cba/img2.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 37344
+      },
+      "full": {
+        "path": "images/optimized/full/album-Tanti-Cba/img2.webp",
+        "width": 1280,
+        "height": 576,
+        "bytes": 139798
+      }
+    },
+    {
+      "original": "images/album-Tanti-Cba/img3.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-Tanti-Cba/img3.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 42096
+      },
+      "full": {
+        "path": "images/optimized/full/album-Tanti-Cba/img3.webp",
+        "width": 900,
+        "height": 1600,
+        "bytes": 248042
+      }
+    },
+    {
+      "original": "images/album-Tanti-Cba/img4.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-Tanti-Cba/img4.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 27658
+      },
+      "full": {
+        "path": "images/optimized/full/album-Tanti-Cba/img4.webp",
+        "width": 1600,
+        "height": 739,
+        "bytes": 116684
+      }
+    },
+    {
+      "original": "images/album-Tanti-Cba/img5.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-Tanti-Cba/img5.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 27244
+      },
+      "full": {
+        "path": "images/optimized/full/album-Tanti-Cba/img5.webp",
+        "width": 1600,
+        "height": 739,
+        "bytes": 162882
+      }
+    },
+    {
+      "original": "images/album-Tanti-Cba/img6.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-Tanti-Cba/img6.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 21226
+      },
+      "full": {
+        "path": "images/optimized/full/album-Tanti-Cba/img6.webp",
+        "width": 1600,
+        "height": 739,
+        "bytes": 131790
+      }
+    },
+    {
+      "original": "images/album-Tanti-Cba/img7.jpg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-Tanti-Cba/img7.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 75176
+      },
+      "full": {
+        "path": "images/optimized/full/album-Tanti-Cba/img7.webp",
+        "width": 1600,
+        "height": 720,
+        "bytes": 408860
+      }
+    },
+    {
+      "original": "images/album-paraguay/img1.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img1.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 34320
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img1.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 101216
+      }
+    },
+    {
+      "original": "images/album-paraguay/img10.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img10.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 18852
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img10.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 60670
+      }
+    },
+    {
+      "original": "images/album-paraguay/img11.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img11.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 25596
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img11.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 85182
+      }
+    },
+    {
+      "original": "images/album-paraguay/img12.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img12.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 28276
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img12.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 82082
+      }
+    },
+    {
+      "original": "images/album-paraguay/img2.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img2.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 24724
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img2.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 73194
+      }
+    },
+    {
+      "original": "images/album-paraguay/img3.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img3.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 17644
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img3.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 49118
+      }
+    },
+    {
+      "original": "images/album-paraguay/img4.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img4.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 17500
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img4.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 49062
+      }
+    },
+    {
+      "original": "images/album-paraguay/img5.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img5.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 20734
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img5.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 56986
+      }
+    },
+    {
+      "original": "images/album-paraguay/img6.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img6.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 18730
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img6.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 56006
+      }
+    },
+    {
+      "original": "images/album-paraguay/img7.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img7.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14108
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img7.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 42710
+      }
+    },
+    {
+      "original": "images/album-paraguay/img8.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img8.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 16122
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img8.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 54196
+      }
+    },
+    {
+      "original": "images/album-paraguay/img9.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-paraguay/img9.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 32418
+      },
+      "full": {
+        "path": "images/optimized/full/album-paraguay/img9.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 88966
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-01.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-01.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 21896
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-01.webp",
+        "width": 576,
+        "height": 1280,
+        "bytes": 70802
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-02.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-02.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 25278
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-02.webp",
+        "width": 576,
+        "height": 1280,
+        "bytes": 54600
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-03.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-03.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 22728
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-03.webp",
+        "width": 576,
+        "height": 1280,
+        "bytes": 63018
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-04.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-04.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 18782
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-04.webp",
+        "width": 576,
+        "height": 1280,
+        "bytes": 54380
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-05.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-05.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 10986
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-05.webp",
+        "width": 576,
+        "height": 1280,
+        "bytes": 27482
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-06.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-06.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 31090
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-06.webp",
+        "width": 576,
+        "height": 1280,
+        "bytes": 70166
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-07.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-07.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 22764
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-07.webp",
+        "width": 576,
+        "height": 1280,
+        "bytes": 50448
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-08.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-08.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 29406
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-08.webp",
+        "width": 900,
+        "height": 1600,
+        "bytes": 102906
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-09.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-09.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 20272
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-09.webp",
+        "width": 900,
+        "height": 1600,
+        "bytes": 89262
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-10.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-10.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 17832
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-10.webp",
+        "width": 1080,
+        "height": 1339,
+        "bytes": 112900
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-11.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-11.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14926
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-11.webp",
+        "width": 1080,
+        "height": 1338,
+        "bytes": 93334
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-12.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-12.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 10906
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-12.webp",
+        "width": 899,
+        "height": 1599,
+        "bytes": 58634
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-13.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-13.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 30962
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-13.webp",
+        "width": 1080,
+        "height": 1335,
+        "bytes": 139110
+      }
+    },
+    {
+      "original": "images/album-backstage/backstage-14.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/album-backstage/backstage-14.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 23194
+      },
+      "full": {
+        "path": "images/optimized/full/album-backstage/backstage-14.webp",
+        "width": 899,
+        "height": 1599,
+        "bytes": 118514
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "original": "images/album-timeline/conapjae.jpg",
+      "optimized": {
+        "path": "images/optimized/content/album-timeline/conapjae.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 83750
+      }
+    },
+    {
+      "original": "images/album-timeline/corvina.jpeg",
+      "optimized": {
+        "path": "images/optimized/content/album-timeline/corvina.webp",
+        "width": 726,
+        "height": 729,
+        "bytes": 72692
+      }
+    },
+    {
+      "original": "images/album-timeline/mango.jpeg",
+      "optimized": {
+        "path": "images/optimized/content/album-timeline/mango.webp",
+        "width": 714,
+        "height": 865,
+        "bytes": 43656
+      }
+    },
+    {
+      "original": "images/album-timeline/mate-terere.jpeg",
+      "optimized": {
+        "path": "images/optimized/content/album-timeline/mate-terere.webp",
+        "width": 738,
+        "height": 727,
+        "bytes": 61670
+      }
+    },
+    {
+      "original": "images/album-timeline/pira\u00f1a.jpeg",
+      "optimized": {
+        "path": "images/optimized/content/album-timeline/pira\u00f1a.webp",
+        "width": 738,
+        "height": 723,
+        "bytes": 45658
+      }
+    },
+    {
+      "original": "images/album-timeline/reconocimiento.jpeg",
+      "optimized": {
+        "path": "images/optimized/content/album-timeline/reconocimiento.webp",
+        "width": 1079,
+        "height": 931,
+        "bytes": 109702
+      }
+    }
+  ],
+  "agenda": [
+    {
+      "original": "images/img-agenda/apjae-01-05-26.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/img-agenda/apjae-01-05-26.webp",
+        "width": 420,
+        "height": 598,
+        "bytes": 41246
+      },
+      "full": {
+        "path": "images/optimized/full/img-agenda/apjae-01-05-26.webp",
+        "width": 1024,
+        "height": 1458,
+        "bytes": 194430
+      }
+    },
+    {
+      "original": "images/img-agenda/baldomero-01-04-26.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/img-agenda/baldomero-01-04-26.webp",
+        "width": 337,
+        "height": 600,
+        "bytes": 15354
+      },
+      "full": {
+        "path": "images/optimized/full/img-agenda/baldomero-01-04-26.webp",
+        "width": 720,
+        "height": 1280,
+        "bytes": 51070
+      }
+    },
+    {
+      "original": "images/img-agenda/san-juan-23-6-26.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/img-agenda/san-juan-23-6-26.webp",
+        "width": 420,
+        "height": 525,
+        "bytes": 49960
+      },
+      "full": {
+        "path": "images/optimized/full/img-agenda/san-juan-23-6-26.webp",
+        "width": 1122,
+        "height": 1402,
+        "bytes": 254066
+      }
+    }
+  ],
+  "hero": {
+    "original": "images/grupo1.jpeg",
+    "optimized": {
+      "path": "images/optimized/content/grupo1.webp",
+      "width": 1599,
+      "height": 899,
+      "bytes": 104388
+    }
+  }
+}
