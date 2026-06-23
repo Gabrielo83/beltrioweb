@@ -362,10 +362,11 @@ backToTop.addEventListener('click', () => {
 //  PRÓXIMO SHOW – destacar la fecha vigente
 // ==========================================
 (function highlightNextShow() {
+  const section = document.getElementById('proximo-show');
   const titleEl = document.getElementById('nextShowTitle');
   const dateEl = document.getElementById('nextShowDate');
   const metaEl = document.getElementById('nextShowMeta');
-  if (!titleEl || !dateEl || !metaEl) return;
+  if (!section || !titleEl || !dateEl || !metaEl) return;
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -378,9 +379,13 @@ backToTop.addEventListener('click', () => {
     .filter(item => item.date >= today)
     .sort((a, b) => a.date - b.date)[0];
 
-  if (!upcoming) return;
+  if (!upcoming) {
+    section.hidden = true;
+    return;
+  }
 
   const { card, date } = upcoming;
+  section.hidden = false;
   const metadata = Array.from(card.querySelectorAll('.agenda-meta-item'))
     .slice(0, 2)
     .map(item => item.textContent.trim())
