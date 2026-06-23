@@ -343,13 +343,14 @@ backToTop.addEventListener('click', () => {
       if (badge) {
         badge.classList.remove('agenda-status--upcoming');
         badge.classList.add('agenda-status--past');
-        badge.textContent = 'Pasado';
+        badge.hidden = true;
       }
     } else {
       // Asegurarse que los proximos tengan el badge correcto
       card.classList.remove('agenda-card--past');
       const badge = card.querySelector('.agenda-status');
       if (badge) {
+        badge.hidden = false;
         badge.classList.remove('agenda-status--past');
         badge.classList.add('agenda-status--upcoming');
         badge.textContent = 'Pr\u00f3ximo';
