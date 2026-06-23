@@ -44,7 +44,7 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#inicio" class="nav-logo">BELTRÍO</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
@@ -61,6 +61,9 @@
   <!-- ========== HERO ========== -->
   <header id="inicio" class="hero">
     <div class="hero-overlay"></div>
+    <div class="hero-ambient" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
     <div class="hero-content">
       <p class="hero-tagline">Folk-Rock Latino</p>
       <h1 class="hero-title">BELTRÍO</h1>
@@ -107,6 +110,23 @@
     </div>
 
   </header>
+
+  <!-- ========== PRÓXIMO SHOW DESTACADO ========== -->
+  <section class="next-show" id="proximo-show" aria-live="polite">
+    <div class="container next-show-inner">
+      <div class="next-show-kicker">
+        <span class="next-show-pulse"></span>
+        EN AGENDA
+      </div>
+      <div class="next-show-date" id="nextShowDate">Nuevas fechas</div>
+      <div class="next-show-copy">
+        <p class="next-show-label">PRÓXIMO SHOW</p>
+        <h2 id="nextShowTitle">Muy pronto</h2>
+        <p id="nextShowMeta">Estamos preparando nuevas presentaciones.</p>
+      </div>
+      <a class="btn btn-primary next-show-cta" href="#agenda">Ver agenda <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
 
   <!-- ========== VIDEO ========== -->
   <section id="video" class="section-dark">
@@ -474,6 +494,11 @@
         </div>
 
       </div><!-- end gallery-masonry -->
+      <div class="gallery-more-wrap">
+        <button class="btn btn-outline gallery-more" id="galleryMore" type="button" aria-expanded="false">
+          Ver más fotos
+        </button>
+      </div>
     </div>
   </section>
 

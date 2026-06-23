@@ -15,6 +15,8 @@ const navLinks  = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  document.body.classList.toggle('nav-open', isOpen);
   const spans = navToggle.querySelectorAll('span');
   if (isOpen) {
     spans[0].style.transform = 'translateY(7px) rotate(45deg)';
@@ -32,6 +34,8 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menú');
+    document.body.classList.remove('nav-open');
     const spans = navToggle.querySelectorAll('span');
     spans[0].style.transform = '';
     spans[1].style.opacity   = '';
@@ -40,7 +44,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 // -- Scroll reveal --
-const revealSelectors = '.section-header, .video-wrapper, .gallery-item, .contact-card, .about-text, .about-deco, .agenda-card';
+const revealSelectors = '.section-header, .video-wrapper, .gallery-item, .contact-card, .about-text, .about-deco, .agenda-card, .next-show-inner';
 const revealElements = document.querySelectorAll(revealSelectors);
 
 revealElements.forEach(el => el.classList.add('reveal'));
@@ -83,21 +87,39 @@ sections.forEach(s => sectionObserver.observe(s));
 // ==========================================
 const albumTabs    = document.querySelectorAll('.album-tab');
 const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryMore  = document.getElementById('galleryMore');
+const galleryLimit = window.matchMedia('(max-width: 768px)').matches ? 8 : 12;
+let galleryExpanded = false;
+let activeGalleryAlbum = 'all';
 
 function filterGallery(album) {
+  activeGalleryAlbum = album;
+  let visibleIndex = 0;
+  let albumCount = 0;
+
   galleryItems.forEach(item => {
     const inAlbum = album === 'all' || item.dataset.album === album;
     if (inAlbum) {
+      albumCount += 1;
       item.classList.remove('hidden');
+      item.classList.toggle('gallery-item--limited', !galleryExpanded && visibleIndex >= galleryLimit);
+      visibleIndex += 1;
       // Animacion de entrada al mostrar
       item.style.animation = 'none';
       item.offsetHeight; // reflow
       item.style.animation = 'galleryFadeIn 0.38s ease both';
     } else {
       item.classList.add('hidden');
+      item.classList.remove('gallery-item--limited');
       item.style.animation = '';
     }
   });
+
+  if (galleryMore) {
+    galleryMore.hidden = albumCount <= galleryLimit;
+    galleryMore.setAttribute('aria-expanded', String(galleryExpanded));
+    galleryMore.textContent = galleryExpanded ? 'Ver menos fotos' : `Ver más fotos (${albumCount - galleryLimit})`;
+  }
 }
 
 albumTabs.forEach(tab => {
@@ -105,9 +127,17 @@ albumTabs.forEach(tab => {
     albumTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
     tab.classList.add('active');
     tab.setAttribute('aria-selected', 'true');
+    galleryExpanded = false;
     filterGallery(tab.dataset.album);
   });
 });
+
+galleryMore?.addEventListener('click', () => {
+  galleryExpanded = !galleryExpanded;
+  filterGallery(activeGalleryAlbum);
+});
+
+filterGallery('all');
 
 // ==========================================
 //  LIGHTBOX
@@ -327,3 +357,61 @@ backToTop.addEventListener('click', () => {
     }
   });
 })();
+
+// ==========================================
+//  PRÓXIMO SHOW – destacar la fecha vigente
+// ==========================================
+(function highlightNextShow() {
+  const titleEl = document.getElementById('nextShowTitle');
+  const dateEl = document.getElementById('nextShowDate');
+  const metaEl = document.getElementById('nextShowMeta');
+  if (!titleEl || !dateEl || !metaEl) return;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const upcoming = Array.from(document.querySelectorAll('.agenda-card[data-date]'))
+    .map(card => {
+      const [year, month, day] = card.dataset.date.split('-').map(Number);
+      return { card, date: new Date(year, month - 1, day) };
+    })
+    .filter(item => item.date >= today)
+    .sort((a, b) => a.date - b.date)[0];
+
+  if (!upcoming) return;
+
+  const { card, date } = upcoming;
+  const metadata = Array.from(card.querySelectorAll('.agenda-meta-item'))
+    .slice(0, 2)
+    .map(item => item.textContent.trim())
+    .join(' · ');
+
+  dateEl.textContent = new Intl.DateTimeFormat('es-AR', {
+    day: '2-digit', month: 'short'
+  }).format(date).replace('.', '');
+  titleEl.textContent = card.querySelector('.agenda-title')?.textContent.trim() || 'Próximo show';
+  metaEl.textContent = metadata || 'Consultá todos los detalles en nuestra agenda.';
+})();
+
+// ==========================================
+//  TRAYECTORIA – detalles plegables en móvil
+// ==========================================
+document.querySelectorAll('.timeline-content').forEach((content, index) => {
+  const details = content.querySelector('.timeline-desc');
+  if (!details) return;
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'timeline-toggle';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', `timeline-details-${index}`);
+  toggle.textContent = 'Ver historia +';
+  details.id = `timeline-details-${index}`;
+  content.appendChild(toggle);
+
+  toggle.addEventListener('click', () => {
+    const expanded = content.classList.toggle('expanded');
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? 'Cerrar historia −' : 'Ver historia +';
+  });
+});
