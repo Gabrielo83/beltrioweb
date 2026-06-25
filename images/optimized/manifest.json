@@ -689,6 +689,21 @@
       }
     },
     {
+      "original": "images/img-agenda/festival-alfajor-12-7-26.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/img-agenda/festival-alfajor-12-7-26.webp",
+        "width": 420,
+        "height": 588,
+        "bytes": 52226
+      },
+      "full": {
+        "path": "images/optimized/full/img-agenda/festival-alfajor-12-7-26.webp",
+        "width": 1060,
+        "height": 1484,
+        "bytes": 255872
+      }
+    },
+    {
       "original": "images/img-agenda/san-juan-23-6-26.jpeg",
       "thumb": {
         "path": "images/optimized/thumbs/img-agenda/san-juan-23-6-26.webp",
