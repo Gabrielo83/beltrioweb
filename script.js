@@ -400,24 +400,72 @@ backToTop.addEventListener('click', () => {
 })();
 
 // ==========================================
-//  TRAYECTORIA – detalles plegables en móvil
+//  TRAYECTORIA – carrusel horizontal con hitos plegables
 // ==========================================
-document.querySelectorAll('.timeline-content').forEach((content, index) => {
-  const details = content.querySelector('.timeline-desc');
-  if (!details) return;
+(() => {
+  const timeline = document.querySelector('.timeline');
+  if (!timeline) return;
 
-  const toggle = document.createElement('button');
-  toggle.type = 'button';
-  toggle.className = 'timeline-toggle';
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-controls', `timeline-details-${index}`);
-  toggle.textContent = 'Ver historia +';
-  details.id = `timeline-details-${index}`;
-  content.appendChild(toggle);
+  const contents = Array.from(timeline.querySelectorAll('.timeline-content'));
+  const restoreTimelineView = () => {
+    window.setTimeout(() => {
+      timeline.closest('.timeline-shell')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest'
+      });
+    }, 80);
+  };
 
-  toggle.addEventListener('click', () => {
-    const expanded = content.classList.toggle('expanded');
-    toggle.setAttribute('aria-expanded', String(expanded));
-    toggle.textContent = expanded ? 'Cerrar historia −' : 'Ver historia +';
+  const closeContent = (content) => {
+    content.classList.remove('expanded');
+    const toggle = content.querySelector('.timeline-toggle');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Ver historia +';
+    }
+  };
+
+  contents.forEach((content, index) => {
+    const details = content.querySelector('.timeline-desc');
+    if (!details) return;
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'timeline-toggle';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', `timeline-details-${index}`);
+    toggle.textContent = 'Ver historia +';
+    details.id = `timeline-details-${index}`;
+    content.appendChild(toggle);
+
+    toggle.addEventListener('click', () => {
+      const shouldExpand = !content.classList.contains('expanded');
+      contents.forEach(item => {
+        if (item !== content) closeContent(item);
+      });
+
+      content.classList.toggle('expanded', shouldExpand);
+      toggle.setAttribute('aria-expanded', String(shouldExpand));
+      toggle.textContent = shouldExpand ? 'Cerrar historia −' : 'Ver historia +';
+
+      if (shouldExpand) {
+        content.closest('.timeline-item')?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      } else {
+        restoreTimelineView();
+      }
+    });
   });
-});
+
+  document.querySelector('.timeline-nav--prev')?.addEventListener('click', () => {
+    timeline.scrollBy({ left: -Math.round(timeline.clientWidth * 0.85), behavior: 'smooth' });
+  });
+
+  document.querySelector('.timeline-nav--next')?.addEventListener('click', () => {
+    timeline.scrollBy({ left: Math.round(timeline.clientWidth * 0.85), behavior: 'smooth' });
+  });
+})();
