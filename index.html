@@ -173,120 +173,175 @@
         <div class="section-line"></div>
       </div>
 
-      <div class="timeline-shell">
-        <div class="timeline-controls" aria-label="Controles de trayectoria">
-          <button class="timeline-nav timeline-nav--prev" type="button" aria-label="Ver hitos anteriores">←</button>
-          <p class="timeline-hint">Deslizá la línea o abrí cada hito para ver su historia.</p>
-          <button class="timeline-nav timeline-nav--next" type="button" aria-label="Ver hitos siguientes">→</button>
+      <div class="trajectory-shell">
+        <div class="trajectory-years" role="tablist" aria-label="Años de trayectoria de BELTRÍO">
+          <button class="trajectory-year-card active" type="button" role="tab" aria-selected="true" aria-controls="trajectory-2025" id="trajectory-tab-2025" data-year="2025">
+            <span class="trajectory-year">2025</span>
+            <span class="trajectory-count">2 hitos</span>
+            <span class="trajectory-summary">Formosa y Córdoba</span>
+          </button>
+          <button class="trajectory-year-card" type="button" role="tab" aria-selected="false" aria-controls="trajectory-2023" id="trajectory-tab-2023" data-year="2023">
+            <span class="trajectory-year">2023</span>
+            <span class="trajectory-count">1 hito</span>
+            <span class="trajectory-summary">Reconocimiento internacional</span>
+          </button>
+          <button class="trajectory-year-card" type="button" role="tab" aria-selected="false" aria-controls="trajectory-2022" id="trajectory-tab-2022" data-year="2022">
+            <span class="trajectory-year">2022</span>
+            <span class="trajectory-count">1 hito</span>
+            <span class="trajectory-summary">Regreso a Paraguay</span>
+          </button>
+          <button class="trajectory-year-card" type="button" role="tab" aria-selected="false" aria-controls="trajectory-2020" id="trajectory-tab-2020" data-year="2020">
+            <span class="trajectory-year">2020</span>
+            <span class="trajectory-count">2 hitos</span>
+            <span class="trajectory-summary">Grandes festivales del litoral</span>
+          </button>
+          <button class="trajectory-year-card" type="button" role="tab" aria-selected="false" aria-controls="trajectory-2019" id="trajectory-tab-2019" data-year="2019">
+            <span class="trajectory-year">2019</span>
+            <span class="trajectory-count">1 hito</span>
+            <span class="trajectory-summary">Escenario internacional</span>
+          </button>
+          <button class="trajectory-year-card" type="button" role="tab" aria-selected="false" aria-controls="trajectory-2018" id="trajectory-tab-2018" data-year="2018">
+            <span class="trajectory-year">2018</span>
+            <span class="trajectory-count">2 hitos</span>
+            <span class="trajectory-summary">Primeros grandes escenarios</span>
+          </button>
         </div>
 
-        <div class="timeline" aria-label="Hitos de trayectoria de BELTRÍO">
-
-        <!-- 2018 -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2018</span>
-            <h3 class="timeline-title">Debut Oficial de la Banda en la Fiesta del Río, Mate y Tereré – Segunda Edición, Formosa</h3>
-            <p class="timeline-desc">Debut oficial de BELTRÍO en la Segunda Edición de la Fiesta del Río, Mate y Tereré en Formosa, marcando el inicio de su camino artístico en los grandes escenarios.</p>
-            <div class="timeline-photo">
-              <img src="images/optimized/content/album-timeline/mate-terere.webp" width="738" height="727" decoding="async" alt="BELTRÍO – Debut en Río, Mate y Tereré 2018" loading="lazy" />
+        <div class="trajectory-panels">
+          <div class="trajectory-panel active" id="trajectory-2025" role="tabpanel" aria-labelledby="trajectory-tab-2025">
+            <div class="trajectory-panel-head">
+              <span>2025</span>
+              <h3>Un año de escenarios federales</h3>
+            </div>
+            <div class="trajectory-events">
+              <article class="trajectory-event">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Formosa</span>
+                  <h4>Aniversario Laguna Naick Neck</h4>
+                  <p>Presentación en el Aniversario de la Laguna Naick Neck, celebrando con su comunidad en un nuevo hito de su trayectoria.</p>
+                </div>
+              </article>
+              <article class="trajectory-event trajectory-event--with-photo">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Tanti, Córdoba</span>
+                  <h4>Fiesta de CONAPJAE</h4>
+                  <p>Participación en la Fiesta de CONAPJAE, llevando el Folk-Rock de BELTRÍO a escenarios del interior del país.</p>
+                </div>
+                <figure class="trajectory-event-photo">
+                  <img src="images/optimized/content/album-timeline/conapjae.webp" width="1200" height="675" decoding="async" alt="BELTRÍO – Fiesta CONAPJAE Tanti Córdoba 2025" loading="lazy" />
+                </figure>
+              </article>
             </div>
           </div>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2018</span>
-            <h3 class="timeline-title">XI Edición de la Pesca de la Piraña – Formosa</h3>
-            <p class="timeline-desc">Presentación en la XI Edición de la Pesca de la Piraña en Formosa, consolidando su presencia en los grandes escenarios de la región.</p>
-            <div class="timeline-photo">
-              <img src="images/optimized/content/album-timeline/piraña.webp" width="738" height="723" decoding="async" alt="BELTRÍO – Fiesta Provincial de la Piraña 2018" loading="lazy" />
+          <div class="trajectory-panel" id="trajectory-2023" role="tabpanel" aria-labelledby="trajectory-tab-2023" hidden>
+            <div class="trajectory-panel-head">
+              <span>2023</span>
+              <h3>Reconocimiento histórico en Paraguay</h3>
+            </div>
+            <div class="trajectory-events">
+              <article class="trajectory-event trajectory-event--with-photo">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Itauguá, Paraguay</span>
+                  <h4>Festival Nacional del Ñandutí</h4>
+                  <p>BELTRÍO fue el primer grupo argentino en integrar la Noche Internacional del festival y recibió el Premio Revelación.</p>
+                </div>
+                <figure class="trajectory-event-photo">
+                  <img src="images/optimized/content/album-timeline/reconocimiento.webp" width="1079" height="931" decoding="async" alt="BELTRÍO – Reconocimiento Festival Ñandutí 2023" loading="lazy" />
+                </figure>
+              </article>
             </div>
           </div>
-        </div>
 
-        <!-- 2019 -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2019</span>
-            <h3 class="timeline-title">Homenaje Internacional en Paraguay</h3>
-            <p class="timeline-desc">Participación internacional en Paraguay, en un homenaje a grandes cantautores del país hermano.</p>
-          </div>
-        </div>
-
-        <!-- 2020 -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2020</span>
-            <h3 class="timeline-title">7° Fiesta Provincial del Mango – Corrientes, Argentina</h3>
-            <p class="timeline-desc">Participación en la 7° Fiesta Provincial del Mango en Corrientes, Argentina, llevando su sonido Folk-Rock a uno de los escenarios provinciales más destacados del litoral.</p>
-            <div class="timeline-photo">
-              <img src="images/optimized/content/album-timeline/mango.webp" width="714" height="865" decoding="async" alt="BELTRÍO – Fiesta Nacional del Mango 2020" loading="lazy" />
+          <div class="trajectory-panel" id="trajectory-2022" role="tabpanel" aria-labelledby="trajectory-tab-2022" hidden>
+            <div class="trajectory-panel-head">
+              <span>2022</span>
+              <h3>La música cruza fronteras</h3>
+            </div>
+            <div class="trajectory-events">
+              <article class="trajectory-event">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Ypacaraí, Paraguay</span>
+                  <h4>Fiesta del Lago de Ypacaraí</h4>
+                  <p>Invitación a la Fiesta Internacional del Lago de Ypacaraí, fusionando folklore y rock en un escenario de renombre internacional.</p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2020</span>
-            <h3 class="timeline-title">XVII Fiesta Nacional de la Corvina de Río – Formosa</h3>
-            <p class="timeline-desc">Presentación en la XVII Fiesta Nacional de la Corvina de Río en Formosa, reafirmando su lugar en los grandes festivales nacionales de la región.</p>
-            <div class="timeline-photo">
-              <img src="images/optimized/content/album-timeline/corvina.webp" width="726" height="729" decoding="async" alt="BELTRÍO – Fiesta Nacional de la Corvina 2020" loading="lazy" />
+          <div class="trajectory-panel" id="trajectory-2020" role="tabpanel" aria-labelledby="trajectory-tab-2020" hidden>
+            <div class="trajectory-panel-head">
+              <span>2020</span>
+              <h3>Presencia en festivales nacionales</h3>
+            </div>
+            <div class="trajectory-events">
+              <article class="trajectory-event trajectory-event--with-photo">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Corrientes, Argentina</span>
+                  <h4>7° Fiesta Provincial del Mango</h4>
+                  <p>Participación en uno de los escenarios provinciales destacados del litoral, llevando su sonido Folk-Rock a Corrientes.</p>
+                </div>
+                <figure class="trajectory-event-photo">
+                  <img src="images/optimized/content/album-timeline/mango.webp" width="714" height="865" decoding="async" alt="BELTRÍO – Fiesta Nacional del Mango 2020" loading="lazy" />
+                </figure>
+              </article>
+              <article class="trajectory-event trajectory-event--with-photo">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Formosa</span>
+                  <h4>XVII Fiesta Nacional de la Corvina de Río</h4>
+                  <p>Presentación en la Fiesta Nacional de la Corvina de Río, reafirmando su lugar en los grandes festivales de la región.</p>
+                </div>
+                <figure class="trajectory-event-photo">
+                  <img src="images/optimized/content/album-timeline/corvina.webp" width="726" height="729" decoding="async" alt="BELTRÍO – Fiesta Nacional de la Corvina 2020" loading="lazy" />
+                </figure>
+              </article>
             </div>
           </div>
-        </div>
 
-        <!-- 2022 -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2022</span>
-            <h3 class="timeline-title">Fiesta del Lago de Ypacaraí</h3>
-            <p class="timeline-desc">Invitación a la Fiesta Internacional del Lago de Ypacaraí en Paraguay, fusionando folklore y rock en un escenario de renombre internacional.</p>
-          </div>
-        </div>
-
-        <!-- 2023 -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2023</span>
-            <h3 class="timeline-title">Festival Nacional del Ñandutí – Reconocimiento y Gratitud</h3>
-            <p class="timeline-desc">Participación en el Festival Nacional del Ñandutí en Itauguá, Paraguay, siendo el primer grupo argentino en integrar la Noche Internacional. La banda fue distinguida con el Premio Revelación, un reconocimiento histórico y emocionante.</p>
-            <div class="timeline-photo">
-              <img src="images/optimized/content/album-timeline/reconocimiento.webp" width="1079" height="931" decoding="async" alt="BELTRÍO – Reconocimiento Festival Ñandutí 2023" loading="lazy" />
+          <div class="trajectory-panel" id="trajectory-2019" role="tabpanel" aria-labelledby="trajectory-tab-2019" hidden>
+            <div class="trajectory-panel-head">
+              <span>2019</span>
+              <h3>Primeras señales internacionales</h3>
+            </div>
+            <div class="trajectory-events">
+              <article class="trajectory-event">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Paraguay</span>
+                  <h4>Homenaje Internacional</h4>
+                  <p>Participación internacional en Paraguay, en un homenaje a grandes cantautores del país hermano.</p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
 
-        <!-- 2025 -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2025</span>
-            <h3 class="timeline-title">Aniversario Laguna Naick Neck – Formosa</h3>
-            <p class="timeline-desc">Presentación en el Aniversario de la Laguna Naick Neck en Formosa, celebrando con su comunidad en un nuevo hito de su trayectoria.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">2025</span>
-            <h3 class="timeline-title">Fiesta de CONAPJAE – Tanti, Córdoba</h3>
-            <p class="timeline-desc">Participación en la Fiesta de CONAPJAE en Tanti, Córdoba, Argentina, llevando el Folk-Rock de BELTRÍO a escenarios del interior del país.</p>
-            <div class="timeline-photo">
-              <img src="images/optimized/content/album-timeline/conapjae.webp" width="1200" height="675" decoding="async" alt="BELTRÍO – Fiesta CONAPJAE Tanti Córdoba 2025" loading="lazy" />
+          <div class="trajectory-panel" id="trajectory-2018" role="tabpanel" aria-labelledby="trajectory-tab-2018" hidden>
+            <div class="trajectory-panel-head">
+              <span>2018</span>
+              <h3>El inicio en grandes escenarios</h3>
+            </div>
+            <div class="trajectory-events">
+              <article class="trajectory-event trajectory-event--with-photo">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Formosa</span>
+                  <h4>Fiesta del Río, Mate y Tereré</h4>
+                  <p>Debut oficial de BELTRÍO en la Segunda Edición, marcando el inicio de su camino artístico en grandes escenarios.</p>
+                </div>
+                <figure class="trajectory-event-photo">
+                  <img src="images/optimized/content/album-timeline/mate-terere.webp" width="738" height="727" decoding="async" alt="BELTRÍO – Debut en Río, Mate y Tereré 2018" loading="lazy" />
+                </figure>
+              </article>
+              <article class="trajectory-event trajectory-event--with-photo">
+                <div class="trajectory-event-copy">
+                  <span class="trajectory-event-location">Formosa</span>
+                  <h4>XI Edición de la Pesca de la Piraña</h4>
+                  <p>Presentación que consolidó su presencia en los grandes escenarios de la región.</p>
+                </div>
+                <figure class="trajectory-event-photo">
+                  <img src="images/optimized/content/album-timeline/piraña.webp" width="738" height="723" decoding="async" alt="BELTRÍO – Fiesta Provincial de la Piraña 2018" loading="lazy" />
+                </figure>
+              </article>
             </div>
           </div>
-        </div>
-
         </div>
       </div>
     </div>

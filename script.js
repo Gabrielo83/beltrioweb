@@ -400,72 +400,59 @@ backToTop.addEventListener('click', () => {
 })();
 
 // ==========================================
-//  TRAYECTORIA – carrusel horizontal con hitos plegables
+//  TRAYECTORIA – selector de años
 // ==========================================
 (() => {
-  const timeline = document.querySelector('.timeline');
-  if (!timeline) return;
+  const shell = document.querySelector('.trajectory-shell');
+  if (!shell) return;
 
-  const contents = Array.from(timeline.querySelectorAll('.timeline-content'));
-  const restoreTimelineView = () => {
-    window.setTimeout(() => {
-      timeline.closest('.timeline-shell')?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'nearest'
-      });
-    }, 80);
-  };
+  const yearCards = Array.from(shell.querySelectorAll('.trajectory-year-card'));
+  const panels = Array.from(shell.querySelectorAll('.trajectory-panel'));
+  if (!yearCards.length || !panels.length) return;
 
-  const closeContent = (content) => {
-    content.classList.remove('expanded');
-    const toggle = content.querySelector('.timeline-toggle');
-    if (toggle) {
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Ver historia +';
+  const setActiveYear = (card, shouldFocus = false) => {
+    const panelId = card.getAttribute('aria-controls');
+
+    yearCards.forEach(item => {
+      const isActive = item === card;
+      item.classList.toggle('active', isActive);
+      item.setAttribute('aria-selected', String(isActive));
+      item.tabIndex = isActive ? 0 : -1;
+    });
+
+    panels.forEach(panel => {
+      const isActive = panel.id === panelId;
+      panel.classList.toggle('active', isActive);
+      panel.hidden = !isActive;
+    });
+
+    if (shouldFocus) {
+      card.focus({ preventScroll: true });
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   };
 
-  contents.forEach((content, index) => {
-    const details = content.querySelector('.timeline-desc');
-    if (!details) return;
+  yearCards.forEach((card, index) => {
+    card.tabIndex = card.classList.contains('active') ? 0 : -1;
 
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'timeline-toggle';
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-controls', `timeline-details-${index}`);
-    toggle.textContent = 'Ver historia +';
-    details.id = `timeline-details-${index}`;
-    content.appendChild(toggle);
-
-    toggle.addEventListener('click', () => {
-      const shouldExpand = !content.classList.contains('expanded');
-      contents.forEach(item => {
-        if (item !== content) closeContent(item);
-      });
-
-      content.classList.toggle('expanded', shouldExpand);
-      toggle.setAttribute('aria-expanded', String(shouldExpand));
-      toggle.textContent = shouldExpand ? 'Cerrar historia −' : 'Ver historia +';
-
-      if (shouldExpand) {
-        content.closest('.timeline-item')?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
-        });
-      } else {
-        restoreTimelineView();
-      }
+    card.addEventListener('click', () => {
+      setActiveYear(card);
     });
-  });
 
-  document.querySelector('.timeline-nav--prev')?.addEventListener('click', () => {
-    timeline.scrollBy({ left: -Math.round(timeline.clientWidth * 0.85), behavior: 'smooth' });
-  });
+    card.addEventListener('keydown', (event) => {
+      const keyMap = {
+        ArrowRight: index + 1,
+        ArrowDown: index + 1,
+        ArrowLeft: index - 1,
+        ArrowUp: index - 1,
+        Home: 0,
+        End: yearCards.length - 1
+      };
 
-  document.querySelector('.timeline-nav--next')?.addEventListener('click', () => {
-    timeline.scrollBy({ left: Math.round(timeline.clientWidth * 0.85), behavior: 'smooth' });
+      if (!(event.key in keyMap)) return;
+      event.preventDefault();
+      const nextIndex = Math.max(0, Math.min(yearCards.length - 1, keyMap[event.key]));
+      setActiveYear(yearCards[nextIndex], true);
+    });
   });
 })();
