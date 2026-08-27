@@ -689,6 +689,21 @@
       }
     },
     {
+      "original": "images/img-agenda/empa-08-08-26.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/img-agenda/empa-08-08-26.webp",
+        "width": 420,
+        "height": 525,
+        "bytes": 50416
+      },
+      "full": {
+        "path": "images/optimized/full/img-agenda/empa-08-08-26.webp",
+        "width": 1400,
+        "height": 1750,
+        "bytes": 323954
+      }
+    },
+    {
       "original": "images/img-agenda/festival-alfajor-12-7-26.jpeg",
       "thumb": {
         "path": "images/optimized/thumbs/img-agenda/festival-alfajor-12-7-26.webp",
@@ -701,6 +716,21 @@
         "width": 1060,
         "height": 1484,
         "bytes": 255872
+      }
+    },
+    {
+      "original": "images/img-agenda/pomelo-20-09-26.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/img-agenda/pomelo-20-09-26.webp",
+        "width": 420,
+        "height": 520,
+        "bytes": 34858
+      },
+      "full": {
+        "path": "images/optimized/full/img-agenda/pomelo-20-09-26.webp",
+        "width": 1127,
+        "height": 1396,
+        "bytes": 162618
       }
     },
     {
