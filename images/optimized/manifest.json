@@ -674,6 +674,21 @@
       }
     },
     {
+      "original": "images/img-agenda/apjae-11y12-10-26.jpeg",
+      "thumb": {
+        "path": "images/optimized/thumbs/img-agenda/apjae-11y12-10-26.webp",
+        "width": 420,
+        "height": 420,
+        "bytes": 30554
+      },
+      "full": {
+        "path": "images/optimized/full/img-agenda/apjae-11y12-10-26.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 159124
+      }
+    },
+    {
       "original": "images/img-agenda/baldomero-01-04-26.jpeg",
       "thumb": {
         "path": "images/optimized/thumbs/img-agenda/baldomero-01-04-26.webp",

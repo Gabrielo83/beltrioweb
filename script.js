@@ -326,29 +326,41 @@ backToTop.addEventListener('click', () => {
 });
 
 // ==========================================
-//  AGENDA – Deteccion automatica de shows pasados
+//  AGENDA - estado, orden y filtros
 // ==========================================
-(function markPastShows() {
+(function setupAgenda() {
+  const list = document.getElementById('agendaList');
+  if (!list) return;
+
+  const cards = Array.from(list.querySelectorAll('.agenda-card[data-date]'));
+  const filters = Array.from(document.querySelectorAll('[data-agenda-filter]'));
+  const upcomingCount = document.getElementById('upcomingCount');
+  const pastCount = document.getElementById('pastCount');
+  const summary = document.getElementById('agendaFilterSummary');
+  const empty = document.getElementById('agendaEmpty');
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  document.querySelectorAll('.agenda-card[data-date]').forEach(card => {
-    const [y, m, d] = card.dataset.date.split('-').map(Number);
-    const showDate = new Date(y, m - 1, d);
+  const parseDate = value => {
+    const [year, month, day] = value.split('-').map(Number);
+    return new Date(year, month - 1, day);
+  };
 
-    if (showDate < today) {
-      // Marcar como pasado si no lo esta ya
+  const items = cards.map(card => {
+    const startDate = parseDate(card.dataset.date);
+    const endDate = parseDate(card.dataset.endDate || card.dataset.date);
+    const isPast = endDate < today;
+    const badge = card.querySelector('.agenda-status');
+
+    if (isPast) {
       card.classList.add('agenda-card--past');
-      const badge = card.querySelector('.agenda-status');
       if (badge) {
         badge.classList.remove('agenda-status--upcoming');
         badge.classList.add('agenda-status--past');
         badge.hidden = true;
       }
     } else {
-      // Asegurarse que los proximos tengan el badge correcto
       card.classList.remove('agenda-card--past');
-      const badge = card.querySelector('.agenda-status');
       if (badge) {
         badge.hidden = false;
         badge.classList.remove('agenda-status--past');
@@ -356,7 +368,50 @@ backToTop.addEventListener('click', () => {
         badge.textContent = 'Pr\u00f3ximo';
       }
     }
+
+    const title = card.querySelector('.agenda-title')?.textContent.trim() || 'este show';
+    const flyer = card.querySelector('.agenda-flyer-thumb');
+    flyer?.setAttribute('aria-label', `Ampliar flyer de ${title}`);
+
+    return { card, startDate, endDate, isPast };
   });
+
+  const upcomingItems = items.filter(item => !item.isPast).sort((a, b) => a.startDate - b.startDate);
+  const pastItems = items.filter(item => item.isPast).sort((a, b) => b.startDate - a.startDate);
+  upcomingItems[0]?.card.classList.add('agenda-card--next');
+
+  if (upcomingCount) upcomingCount.textContent = String(upcomingItems.length);
+  if (pastCount) pastCount.textContent = String(pastItems.length);
+
+  const showFilter = filter => {
+    const visibleItems = filter === 'past' ? pastItems : upcomingItems;
+    const hiddenItems = filter === 'past' ? upcomingItems : pastItems;
+
+    visibleItems.forEach(item => {
+      item.card.hidden = false;
+      list.appendChild(item.card);
+    });
+    hiddenItems.forEach(item => { item.card.hidden = true; });
+
+    filters.forEach(button => {
+      const isActive = button.dataset.agendaFilter === filter;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+
+    if (summary) {
+      const singular = filter === 'past' ? 'fecha anterior' : 'próxima fecha';
+      const plural = filter === 'past' ? 'fechas anteriores' : 'próximas fechas';
+      summary.textContent = `${visibleItems.length} ${visibleItems.length === 1 ? singular : plural}`;
+    }
+    if (empty) empty.hidden = visibleItems.length > 0;
+  };
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => showFilter(button.dataset.agendaFilter));
+  });
+
+  showFilter(upcomingItems.length ? 'upcoming' : 'past');
 })();
 
 // ==========================================
@@ -364,10 +419,8 @@ backToTop.addEventListener('click', () => {
 // ==========================================
 (function highlightNextShow() {
   const section = document.getElementById('proximo-show');
-  const titleEl = document.getElementById('nextShowTitle');
-  const dateEl = document.getElementById('nextShowDate');
-  const metaEl = document.getElementById('nextShowMeta');
-  if (!section || !titleEl || !dateEl || !metaEl) return;
+  const list = document.getElementById('nextShowList');
+  if (!section || !list) return;
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -375,28 +428,50 @@ backToTop.addEventListener('click', () => {
   const upcoming = Array.from(document.querySelectorAll('.agenda-card[data-date]'))
     .map(card => {
       const [year, month, day] = card.dataset.date.split('-').map(Number);
-      return { card, date: new Date(year, month - 1, day) };
+      const [endYear, endMonth, endDay] = (card.dataset.endDate || card.dataset.date).split('-').map(Number);
+      return { card, date: new Date(year, month - 1, day), endDate: new Date(endYear, endMonth - 1, endDay) };
     })
-    .filter(item => item.date >= today)
-    .sort((a, b) => a.date - b.date)[0];
+    .filter(item => item.endDate >= today)
+    .sort((a, b) => a.date - b.date);
 
-  if (!upcoming) {
+  if (!upcoming.length) {
     section.hidden = true;
     return;
   }
 
-  const { card, date } = upcoming;
   section.hidden = false;
-  const metadata = Array.from(card.querySelectorAll('.agenda-meta-item'))
-    .slice(0, 2)
-    .map(item => item.textContent.trim())
-    .join(' · ');
+  list.replaceChildren(...upcoming.map(({ card, date }, index) => {
+    const event = document.createElement('article');
+    event.className = 'next-show-event';
 
-  dateEl.textContent = new Intl.DateTimeFormat('es-AR', {
-    day: '2-digit', month: 'short'
-  }).format(date).replace('.', '');
-  titleEl.textContent = card.querySelector('.agenda-title')?.textContent.trim() || 'Próximo show';
-  metaEl.textContent = metadata || 'Consultá todos los detalles en nuestra agenda.';
+    const dateEl = document.createElement('div');
+    dateEl.className = 'next-show-date';
+    dateEl.textContent = card.dataset.displayDate || new Intl.DateTimeFormat('es-AR', {
+      day: '2-digit', month: 'short'
+    }).format(date).replace('.', '');
+
+    const copy = document.createElement('div');
+    copy.className = 'next-show-copy';
+    const label = document.createElement('p');
+    label.className = 'next-show-label';
+    label.textContent = index === 0 ? 'PRÓXIMO SHOW' : 'SIGUIENTE FECHA';
+    const title = document.createElement('h2');
+    title.textContent = card.querySelector('.agenda-title')?.textContent.trim() || 'Próximo show';
+    const meta = document.createElement('p');
+    meta.textContent = Array.from(card.querySelectorAll('.agenda-meta-item'))
+      .slice(0, 2)
+      .map(item => item.textContent.trim())
+      .join(' · ') || 'Consultá todos los detalles en nuestra agenda.';
+    copy.append(label, title, meta);
+
+    const link = document.createElement('a');
+    link.className = 'btn btn-primary next-show-cta';
+    link.href = '#agenda';
+    link.innerHTML = 'Ver agenda <span aria-hidden="true">→</span>';
+
+    event.append(dateEl, copy, link);
+    return event;
+  }));
 })();
 
 // ==========================================
