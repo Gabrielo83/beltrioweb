@@ -349,13 +349,22 @@ backToTop.addEventListener('click', () => {
   const items = cards.map(card => {
     const startDate = parseDate(card.dataset.date);
     const endDate = parseDate(card.dataset.endDate || card.dataset.date);
-    const isPast = endDate < today;
+    const isPostponed = card.dataset.status === 'postponed';
+    const isPast = !isPostponed && endDate < today;
     const badge = card.querySelector('.agenda-status');
 
-    if (isPast) {
+    if (isPostponed) {
+      card.classList.remove('agenda-card--past');
+      if (badge) {
+        badge.hidden = false;
+        badge.classList.remove('agenda-status--past', 'agenda-status--upcoming');
+        badge.classList.add('agenda-status--postponed');
+        badge.textContent = 'Postergado';
+      }
+    } else if (isPast) {
       card.classList.add('agenda-card--past');
       if (badge) {
-        badge.classList.remove('agenda-status--upcoming');
+        badge.classList.remove('agenda-status--upcoming', 'agenda-status--postponed');
         badge.classList.add('agenda-status--past');
         badge.hidden = true;
       }
@@ -363,7 +372,7 @@ backToTop.addEventListener('click', () => {
       card.classList.remove('agenda-card--past');
       if (badge) {
         badge.hidden = false;
-        badge.classList.remove('agenda-status--past');
+        badge.classList.remove('agenda-status--past', 'agenda-status--postponed');
         badge.classList.add('agenda-status--upcoming');
         badge.textContent = 'Pr\u00f3ximo';
       }
@@ -373,12 +382,14 @@ backToTop.addEventListener('click', () => {
     const flyer = card.querySelector('.agenda-flyer-thumb');
     flyer?.setAttribute('aria-label', `Ampliar flyer de ${title}`);
 
-    return { card, startDate, endDate, isPast };
+    return { card, startDate, endDate, isPast, isPostponed };
   });
 
-  const upcomingItems = items.filter(item => !item.isPast).sort((a, b) => a.startDate - b.startDate);
+  const upcomingItems = items
+    .filter(item => !item.isPast)
+    .sort((a, b) => Number(a.isPostponed) - Number(b.isPostponed) || a.startDate - b.startDate);
   const pastItems = items.filter(item => item.isPast).sort((a, b) => b.startDate - a.startDate);
-  upcomingItems[0]?.card.classList.add('agenda-card--next');
+  upcomingItems.find(item => !item.isPostponed)?.card.classList.add('agenda-card--next');
 
   if (upcomingCount) upcomingCount.textContent = String(upcomingItems.length);
   if (pastCount) pastCount.textContent = String(pastItems.length);
@@ -426,6 +437,7 @@ backToTop.addEventListener('click', () => {
   today.setHours(0, 0, 0, 0);
 
   const upcoming = Array.from(document.querySelectorAll('.agenda-card[data-date]'))
+    .filter(card => card.dataset.status !== 'postponed')
     .map(card => {
       const [year, month, day] = card.dataset.date.split('-').map(Number);
       const [endYear, endMonth, endDay] = (card.dataset.endDate || card.dataset.date).split('-').map(Number);

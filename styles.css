@@ -1179,6 +1179,11 @@ section { padding: 6rem 1.5rem; }
   color: var(--accent-2);
   border: 1px solid rgba(200,151,43,0.3);
 }
+.agenda-status--postponed {
+  background: rgba(214, 132, 48, 0.16);
+  color: #e6ad70;
+  border: 1px solid rgba(214, 132, 48, 0.38);
+}
 .agenda-status--past {
   display: none;
 }
